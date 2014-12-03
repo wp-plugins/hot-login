@@ -1,6 +1,6 @@
-=== Hot Login ===
+﻿=== Hot Login ===
 Contributors: Anderson.Makiyama
-Tags: hotmart, hotconnect, login hotmart, membros, area de membros
+Tags: hotmart, hotconnect, hotmembers
 Requires at least: 3.0
 Tested up to: 4.1
 Stable tag: trunk
