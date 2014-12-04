@@ -68,3 +68,7 @@ Sim, claro. É só deixar um comentário em [Plugin Hotmart Login](http://ganhar
 
 = 1.0 =
 * Publicação do plugin
+
+= 1.1 =
+* Adicionada opção para restringir acesso a todas as páginas, ou a todos os posts, ou destivar restrição.
+* Adicionada opção para definir o nível do usuário que é automaticamente cadastrado (inscrito, colaborador, autor, editor, etc)

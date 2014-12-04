@@ -4,7 +4,7 @@ Plugin Name: Hot Login
 Plugin URI: http://ganhardinheiroblog.net/plugin-hotmart-login
 Description: Integre seu site Wordpress com o Hotmart, libere e bloqueie acesso de forma automatica conforme o status da compra
 Author: Anderson Makiyama
-Version: 1.0
+Version: 1.1
 Author URI: http://ganhardinheiroblog.net
 */
 
@@ -18,7 +18,7 @@ class Anderson_Makiyama_Hot_Login{
 	public static $PLUGIN_NAME = self::PLUGIN_NAME;
 	const PLUGIN_PAGE = 'http://ganhardinheiroblog.net/plugin-hotmart-login';
 	public static $PLUGIN_PAGE = self::PLUGIN_PAGE;
-	const PLUGIN_VERSION = '1.0';
+	const PLUGIN_VERSION = '1.1';
 	public static $PLUGIN_VERSION = self::PLUGIN_VERSION;
 	public $plugin_basename;
 	public $plugin_path;
@@ -38,6 +38,8 @@ class Anderson_Makiyama_Hot_Login{
 		if(!isset($options['app_secret'])) $options['app_secret'] = '';
 		if(!isset($options['id_produto'])) $options['id_produto'] = '';
 		if(!isset($options['pagina_inicial'])) $options['pagina_inicial'] = '';
+		if(!isset($options['restricoes'])) $options['restricoes'] = 1;
+		if(!isset($options['tipo_usuario'])) $options['tipo_usuario'] = 'subscriber';
 
 		update_option(self::CLASS_NAME . "_options", $options);
 		
@@ -177,6 +179,8 @@ class Anderson_Makiyama_Hot_Login{
 			$options['app_secret'] = $_POST['app_secret'];
 			$options['id_produto'] = $_POST['id_produto'];
 			$options['pagina_inicial'] = $_POST['pagina_inicial'];
+			$options['restricoes'] = $_POST['restricoes'];
+			$options['tipo_usuario'] = $_POST['tipo_usuario'];
 			
 			if(strpos($options['pagina_inicial'],'http') === false)
 				$options['pagina_inicial'] = 'http://'. $options['pagina_inicial'];
@@ -223,8 +227,9 @@ class Anderson_Makiyama_Hot_Login{
 		
 	}
 	
-	private static function cadastra_usuario($id, $nome,$email){
+	private static function cadastra_usuario($id, $nome,$email, $nivel){
 
+		
 		$nome_array = split(" ",$nome,2);
 		$primeiro_nome = $nome_array[0];
 		$sobrenome = isset($nome_array[1])?$nome_array[1]:'';
@@ -237,7 +242,7 @@ class Anderson_Makiyama_Hot_Login{
 			'display_name' => $nome,
 			'nickname' => $nome,
 			'user_email' => $email,
-			'user_role'  =>  'subscriber',
+			'user_role'  =>  $nivel,
 			'user_pass'   =>  NULL
 		);
 		
@@ -277,6 +282,7 @@ class Anderson_Makiyama_Hot_Login{
 		$options = get_option(self::CLASS_NAME . "_options");
 		
 		$pagina_inicial = $options["pagina_inicial"];
+		$nivel = $options["tipo_usuario"];
 		
 	
 		$url = $_SERVER["REQUEST_URI"];
@@ -383,7 +389,7 @@ class Anderson_Makiyama_Hot_Login{
 				 //Cadastra usuario
 				 if(!username_exists( 'hot_' . $id_comprador )){
 					 
-					 $retorno_cadastro = self::cadastra_usuario($id_comprador,$nome_comprador, $email_comprador);
+					 $retorno_cadastro = self::cadastra_usuario($id_comprador,$nome_comprador, $email_comprador, $nivel);
 					
 					/*//On success
 					if( !is_wp_error($retorno_cadastro) ) {
@@ -502,9 +508,26 @@ class Anderson_Makiyama_Hot_Login{
 
 	public function post_checker($content){
 		
-		if(!is_user_logged_in() && is_single()){
-			
-			$content = "<h2>Conteúdo Exclusivo para Membros</h2>";	
+		$options = get_option(self::CLASS_NAME . "_options");
+		$restricao = $options["restricoes"];
+		
+		switch($restricao){
+		
+			case 1:
+
+				if(!is_user_logged_in() && is_single()){
+					
+					$content = "<h2>Conteúdo Exclusivo para Membros</h2>";	
+				}
+					
+			break;
+			case 2:
+				if(!is_user_logged_in() && is_page()){
+					
+					$content = "<h2>Conteúdo Exclusivo para Membros</h2>";	
+				}			
+			break;
+				
 		}
 		
 		return $content;

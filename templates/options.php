@@ -70,6 +70,35 @@
                 <input type="text" name="pagina_inicial" value="<?php echo $options['pagina_inicial']?>" class="regular-text" /> <p class="description">( Digite o URL da página Inicial que deve ser exibida ao comprador após ele fazer Login )</p>
                 </td>
                 </tr>
+                <tr>
+            	
+                <th scope="row">
+                <label>Restrições de Acesso</label>
+                </th >
+                <td>
+                <label>Só Membros Poderão Acessar</label>
+                <select name="restricoes" >
+                	<option value="1" <?php selected(1,$options["restricoes"])?>>Todos os Posts</option>
+                    <option value="2" <?php selected(2,$options["restricoes"])?>>Todas as Páginas</option>
+                    <option value="3" <?php selected(3,$options["restricoes"])?>>Desativar Restrições</option>
+                </select>
+                </td>
+                </tr>   
+                <tr>
+            	
+                <th scope="row">
+                <label>Nível do Usuário</label>
+                </th >
+                <td>
+                <label>Usuários Cadastrados pelo Plugin Serão</label>
+                <select name="tipo_usuario" >
+                	<option value="subscriber" <?php selected("subscriber",$options["tipo_usuario"])?>>Inscritos (Recomendado)</option>
+                    <option value="contributor" <?php selected("contributor",$options["tipo_usuario"])?>>Contribuidores</option>
+                    <option value="author" <?php selected("author",$options["tipo_usuario"])?>>Autores</option>
+                    <option value="editor" <?php selected("editor",$options["tipo_usuario"])?>>Editores</option>
+                </select>
+                </td>
+                </tr>                             
                 </table>
                
                 <input type="submit" name="submit" value="Salvar Todas as Alterações" class="button-primary" />
