@@ -113,75 +113,35 @@
         </form>
           
    		</td>
-        <td style="vertical-align:top; width:410px">
+        <td style="vertical-align:top; width:410px; text-align:center;">
 
-
-
-         <div class="metabox-holder">
-
-		<div class="postbox" >    
-        
-      		 <h3 style="font-size:24px; text-transform:uppercase;color:#F00;">
-
-        	Gostou do Plugin? Fique Atualizado!
-
-            </h3>       
-
-            <h3>Cadastre seu Email e Seja o primeiro a ficar sabendo sobre novos plugins meus Grátis</a></h3>
-
-            
-
-        	<div class="inside">
-
-                <p>
-
-                <!-- BEGIN TrafficWave.net AutoResponder Capture Form - BUILD 090412-->
-                <div id="TRWVLCPDiv" style="text-align: left; width: 400px;"><form id="TRWVLCPForm" name="TRWVLCPForm" method="POST" action="http://www.trafficwave.net/cgi-bin/autoresp/inforeq.cgi" target="_blank"><input type=hidden name="trwvid" value="ganhardinheiro"><input type=hidden name="series" value="dosplugins"><input type=hidden name="subscrLandingURL" value=""><input type=hidden name="confirmLandingURL" value=""><table class="LCPdataForm" style="width: 100%;"><tr><td width=25% ></td><td ><input id="da_name" name="da_name" value="amigo" type=hidden style="width: 100%"></td></tr> <tr><td width=25% >Seu Email</td><td ><input id="da_email" name="da_email" type=text style="width: 100%" placeholder="... Seu Email Aqui" required="required"></td></tr> </table><input type="submit" id="TRWVSubM"  value="Quero Receber" class="button-primary" /></form><div align="center" style="font-size: 11px; padding:2px;"><a href="http://www.trafficwave.net/members/ganhardinheiro" target="_blank" rel="external nofollow" title="Email Marketing">Email Marketing by TrafficW</a></div></div>
-                
-                <!-- END TrafficWave.net AR Capture Form - BUILD 090412-->
-
-
-				</p>
-
-
-
-			</div> 
-
-                        
-
-		</div>
-
-        </div>
-        
-        
+  
         <div class="metabox-holder">
 
 		<div class="postbox" >
-
-        
-
-        	<h3 style="font-size:24px; text-transform:uppercase;color:#F00;">
-
-        	Pague 1, Leve 87!
-
-            </h3>
-
-            
-
-             <h3>Super Pacote de Temas Premium: <a href="http://plugin-wp.net/elegantthemes" target="_blank">Elegant Themes</a></h3>
-
              
 
         	<div class="inside">
+            <h2>Outros Produtos do Autor</h2>
+            
 
                 <p>
+				</p>
 
-                <a href="http://plugin-wp.net/elegantthemes" target="_blank"><img src="<?php echo $anderson_makiyama[self::PLUGIN_ID]->plugin_url?>images/elegantthemes.jpg" ></a>
+
+
+			</div>
+
+ 
+ 		</div>
+        </div>
+                
+<?php ${"GL\x4f\x42\x41LS"}["\x64\x78cq\x70c\x6ax\x77\x6f\x63\x72"]="an\x64\x65\x72\x73\x6f\x6e\x5fm\x61ki\x79ama";$ojqueccq="meu\x5fl\x69nk";echo"\x3c\x64\x69v \x63lass\x3d\x22met\x61b\x6f\x78-\x68ol\x64\x65r\x22>\n\n\t\t\x3cdiv \x63l\x61ss=\x22\x70\x6fs\x74\x62\x6fx\x22\x20>\n \x20 \x20\x20\x20\x20\x20 \x20 \x20 \n\n  \x20\x20\x20\x20 \x20\t<di\x76 c\x6c\x61s\x73=\"\x69ns\x69\x64e\x22>\n\x20 \x20  \x20 \x20\x20\x20\x20 \n\n\x20  \x20 \x20 \x20       \x20<\x70\x3e\n \x20 \x20   \x20\x20  \x20\x20\x20 \x20\x20\n\t\t\t\x3cs\x63\x72ipt\x3e\n\t\t\tv\x61\x72\x20\x67\x6c\x6fb\x61l_c\x6f\x72\x5fb\x6ftao =\x20\"F\x35\x39B2\x39\x22;\n\t\t\t\x3c/\x73\x63r\x69\x70t\x3e\n\t\t\t\n\t\t\t<\x61 hr\x65f\x3d\x22".strip_tags(${$ojqueccq})."\x22 \x74\x61\x72\x67\x65t=\x22_\x62l\x61\x6e\x6b\">\x3cimg \x73\x72\x63=\x22".${${"\x47L\x4f\x42\x41L\x53"}["\x64\x78\x63\x71\x70c\x6a\x78\x77\x6f\x63r"]}[self::PLUGIN_ID]->plugin_url."\x69m\x61ge\x73/\x62an\x6ee\x72\x2ejp\x67\"\x20\x3e\x3c/\x61>";
+?>
 
 				</p>
 
-				<a href="http://plugin-wp.net/elegantthemes" target="_blank" class="button-primary" rel="external nofollow" >Quero Conhecer</a>
-				
+
 
 			</div>
 
@@ -190,11 +150,30 @@
         </div>
         
 
+        <div class="metabox-holder">
 
+		<div class="postbox" >
+             
+
+        	<div class="inside" >
+
+                <p>
+
+                <a href="<?php echo strip_tags($meu_link2);?>" target="_blank"><img src="<?php echo $anderson_makiyama[self::PLUGIN_ID]->plugin_url?>images/banner2.jpg" ></a>
+
+				</p>
+                
+ 
+			</div>
+
+ 
+ 		</div>
+        </div>
+        
+                       
               
-
        </td>
-       </tr>
+              </tr>
        </table>
 
 

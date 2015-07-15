@@ -2,7 +2,7 @@
 Contributors: Anderson.Makiyama
 Tags: hotmart, hotconnect, hotmembers
 Requires at least: 3.0
-Tested up to: 4.1
+Tested up to: 4.2.2
 Stable tag: trunk
 
 Integre seu site Wordpress com o Hotmart, libere e bloqueie acesso de forma automatica conforme o status da compra
@@ -72,3 +72,6 @@ Sim, claro. É só deixar um comentário em [Plugin Hotmart Login](http://ganhar
 = 1.1 =
 * Adicionada opção para restringir acesso a todas as páginas, ou a todos os posts, ou destivar restrição.
 * Adicionada opção para definir o nível do usuário que é automaticamente cadastrado (inscrito, colaborador, autor, editor, etc)
+
+= 1.2 =
+* Corrigi alguns erros

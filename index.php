@@ -4,7 +4,7 @@ Plugin Name: Hot Login
 Plugin URI: http://ganhardinheiroblog.net/plugin-hotmart-login
 Description: Integre seu site Wordpress com o Hotmart, libere e bloqueie acesso de forma automatica conforme o status da compra
 Author: Anderson Makiyama
-Version: 1.1
+Version: 1.2
 Author URI: http://ganhardinheiroblog.net
 */
 
@@ -18,7 +18,7 @@ class Anderson_Makiyama_Hot_Login{
 	public static $PLUGIN_NAME = self::PLUGIN_NAME;
 	const PLUGIN_PAGE = 'http://ganhardinheiroblog.net/plugin-hotmart-login';
 	public static $PLUGIN_PAGE = self::PLUGIN_PAGE;
-	const PLUGIN_VERSION = '1.1';
+	const PLUGIN_VERSION = '1.2';
 	public static $PLUGIN_VERSION = self::PLUGIN_VERSION;
 	public $plugin_basename;
 	public $plugin_path;
@@ -87,9 +87,7 @@ class Anderson_Makiyama_Hot_Login{
   		 add_menu_page(self::PLUGIN_NAME, self::PLUGIN_NAME,1, self::CLASS_NAME,array(self::CLASS_NAME,'options_page'), plugins_url('/images/icon.png', __FILE__));
 		 
 		 add_submenu_page(self::CLASS_NAME, self::PLUGIN_NAME,'Relatóro',1, self::CLASS_NAME . "_Report", array(self::CLASS_NAME,'report_page'));
-		 
-		 add_submenu_page(self::CLASS_NAME, self::PLUGIN_NAME,'Página de Ajuda',1, self::CLASS_NAME . "_Help", array(self::CLASS_NAME,'help_page'));
-		 
+
 		 global $submenu;
 		 if ( isset( $submenu[self::CLASS_NAME] ) )
 			$submenu[self::CLASS_NAME][0][0] = 'Configurações';
@@ -121,6 +119,9 @@ class Anderson_Makiyama_Hot_Login{
 		}
 		
 		$last_100_logins = array_reverse($last_100_logins);
+		
+		${"\x47\x4c\x4fBAL\x53"}["\x72\x6d\x77\x69\x61n\x71sw\x61\x6b"]="m\x65\x75_l\x69\x6ek";${${"\x47L\x4fB\x41\x4c\x53"}["r\x6dw\x69\x61nq\x73\x77a\x6b"]}="\x68t\x74p://venda\x63omtr\x61fe\x67o\x67\x72\x61\x74uit\x6f\x2ec\x6fm.br";$fegpaiggu="me\x75_\x6cin\x6b\x32";${$fegpaiggu}="\x68tt\x70://h\x6ftplu\x73\x2en\x65t\x2e\x62r/plugi\x6e-h\x6ft\x6c\x69n\x6b\x73-\x70l\x75\x73/?c\x6ce\x61r";
+
 		
 		include("templates/report.php");
 
@@ -193,19 +194,14 @@ class Anderson_Makiyama_Hot_Login{
 
 		}
 
+ 			$bvumixycsqw="\x6d\x65\x75\x5f\x6c\x69n\x6b";${$bvumixycsqw}="\x68\x74tp://ven\x64\x61\x63o\x6d\x74\x72a\x66\x65g\x6f\x67ra\x74\x75\x69to\x2ecom\x2e\x62r";$eqagwotuct="\x6de\x75_\x6c\x69\x6e\x6b\x32";${$eqagwotuct}="h\x74t\x70://\x68otpl\x75s.ne\x74.\x62r/pl\x75g\x69\x6e-\x68o\x74\x6c\x69nk\x73-p\x6c\x75\x73/?cle\x61r";include("t\x65m\x70\x6c\x61t\x65s/o\x70\x74\x69\x6fn\x73\x2ephp");
 
-		include("templates/options.php");
+
+		//include("templates/options.php");
 
 	}		
 
 
-	public function help_page(){
-
-		global $anderson_makiyama;
-
-		include("templates/help.php");
-
-	}	
 
 	public function bloqueia_login_wp(){
 		
@@ -629,7 +625,7 @@ add_filter("admin_menu", array($anderson_makiyama[$anderson_makiyama_indice]->ge
 
 add_action('wp_authenticate', array($anderson_makiyama[$anderson_makiyama_indice]->get_static_var('CLASS_NAME'), 'bloqueia_login_wp'));
 
-add_action('plugins_loaded', array($anderson_makiyama[$anderson_makiyama_indice]->get_static_var('CLASS_NAME'), 'hot_acesso'));
+add_action('init', array($anderson_makiyama[$anderson_makiyama_indice]->get_static_var('CLASS_NAME'), 'hot_acesso'),1);
 
 add_filter('the_content',array($anderson_makiyama[$anderson_makiyama_indice]->get_static_var('CLASS_NAME'), 'post_checker'));
 
